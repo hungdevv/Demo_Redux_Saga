@@ -1,55 +1,32 @@
-import React, { useState, useContext } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text, Input, Button} from 'react-native-elements';
+import React, {useContext } from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text} from 'react-native-elements';
 import Spacer from '../components/Spacer';
 import { Context as AuthContext} from '../context/AuthContext';
+import AuthForm from '../components/AuthForm';
 
 const SignupScreen = ({ navigation }) => {
 
     const {state, signup} = useContext(AuthContext);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
-    // console.log(state);
 
     return(
         <View style={styles.container}>  
-            <Spacer>
-                <Text h3 style={{textAlign: 'center'}}>Sign Up for NNH</Text> 
-            </Spacer>
-            <Spacer>
-                <Input 
-                label="Email"
-                value={email}
-                onChangeText={setEmail}
-                autoCapitalize="none"
-                autoCorrect={false}
-                />
-            </Spacer>
-            <Spacer>
-                <Input 
-                secureTextEntry
-                label="Password"
-                value={password}
-                onChangeText={setPassword}
-                autoCapitalize="none"
-                autoCorrect={false} />
-            </Spacer>
-            {state.errorMessage ? <Text style={styles.errorMessage}> {state.errorMessage}</Text> : null}
-            <Spacer>
-                <Button 
-                title = "Sign Up"
-                onPress={() => signup({ email, password })}
-                />
-            </Spacer>
-            <Button
-                title="Go to Signin"
-                onPress={() => navigation.navigate('Signin')}
+            <AuthForm 
+                headerText="Sign up for NNH"
+                errorMessage={state.errorMessage}
+                submitButtonText="Sign Up"
+                onSubmit={signup}
             />
-              <Button 
-                title="Go to main flow"
-                onPress={() => navigation.navigate('mainFlow')}
-            />
+            <TouchableOpacity 
+            onPress={() => navigation.navigate('Signin')
+            }>
+                <Spacer>
+                    <>
+                        <Text>Already have an account? <Text style={styles.link}>Sign in</Text></Text>
+                    </>
+                </Spacer>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -67,11 +44,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center', 
         marginBottom: 200
     },
-    errorMessage: {
-        fontSize: 16,
-        color: 'red',
-        marginLeft: 15,
-        marginBottom: 15
+    link: {
+        color: 'blue'
     }
 });
 
