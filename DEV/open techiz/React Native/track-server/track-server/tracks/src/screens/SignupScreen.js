@@ -3,14 +3,18 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import NavLink from '../components/NavLink';
 import { Context as AuthContext} from '../context/AuthContext';
 import AuthForm from '../components/AuthForm';
+import { NavigationEvents } from 'react-navigation';
 
 const SignupScreen = () => {
 
-    const {state, signup} = useContext(AuthContext);
+    const {state, signup, clearErrorMessage} = useContext(AuthContext);
 
 
     return(
-        <View style={styles.container}>  
+        <View style={styles.container}> 
+            <NavigationEvents 
+            onWillFocus={clearErrorMessage}
+            />  
             <AuthForm 
                 headerText="Sign up for NNH"
                 errorMessage={state.errorMessage}
