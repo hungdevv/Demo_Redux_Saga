@@ -9,7 +9,7 @@ const TrackForm = () => {
     stopRecording, 
     changeName} = useContext(LocationContext);
     
-    console.log(locations);
+    console.log(locations.length);
 
     return (<>
         <Spacer>
