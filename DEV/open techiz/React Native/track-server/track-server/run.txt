@@ -1,0 +1,3 @@
+npm run dev
+ngrok authtoken 6BY8KF3rmZ2bzuf6JM5Zz_5QrBGssyCrqavk5t6KJnK
+ngork http 3000
