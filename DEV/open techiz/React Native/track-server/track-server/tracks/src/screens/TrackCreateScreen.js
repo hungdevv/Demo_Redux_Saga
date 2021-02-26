@@ -7,6 +7,7 @@ import '../_mockLocation';
 import { Context as LocationContext } from '../context/LocationContext';
 import useLocation from '../hooks/useLocation';
 import TrackForm from '../components/TrackForm';
+import { AntDesign } from '@expo/vector-icons';
 
 
 const TrackCreateScreen = ({ isFocused}) => {
@@ -25,6 +26,12 @@ const TrackCreateScreen = ({ isFocused}) => {
     </SafeAreaView>
   )
 };
+
+
+TrackCreateScreen.navigationOptions = {
+  title: 'Add Track',
+  tabBarIcon: <AntDesign name="pluscircleo" size={20} color={'black'} />
+}
 
 const styles = StyleSheet.create({});
 

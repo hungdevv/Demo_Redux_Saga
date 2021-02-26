@@ -4,6 +4,7 @@ import { Button } from 'react-native-elements'
 import Spacer from '../components/Spacer';
 import { SafeAreaView } from 'react-navigation';
 import {Context as AuthContext} from '../context/AuthContext';
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 
 const AccountScreen = () => {
@@ -22,6 +23,9 @@ const AccountScreen = () => {
   </>
 };
 
+AccountScreen.navigationOptions = {
+  tabBarIcon: <MaterialIcons name="account-circle" size={20} color="black" />
+}
 const styles = StyleSheet.create({});
 
 export default AccountScreen;
