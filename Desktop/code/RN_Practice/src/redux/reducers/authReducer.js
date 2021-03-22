@@ -7,9 +7,9 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch(action.type) {
-      case 'AUTH_LOADING':
+      case 'LOADING':
         return {...state, isLoading: true};
-      case 'AUTH_LOADED':
+      case 'LOADED':
         return {...state, isLoading: false};
       case 'ADD_ERROR_MESSAGE':
         return { ...state, statusErr: action.payload.statusErr };

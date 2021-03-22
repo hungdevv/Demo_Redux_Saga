@@ -34,9 +34,9 @@ const EntityFormComponent = ({navigation}) => {
               </View>
             }
           />
-          <View style={{width: '100%', marginTop: 80, flex: 6}}>
-              <View style={{flexDirection: 'row', paddingHorizontal: 10}}>
-                <Text style={{flex: 1, color: 'white', }}>Homme</Text>
+          <View style={styles.boxContent}>
+              <View style={styles.content}>
+               <Text style={styles.contentText}>Homme</Text>
                 <RadioButton
                 value='1'
                 status={checked === "1" ? "checked" : "unchecked"}
@@ -49,8 +49,8 @@ const EntityFormComponent = ({navigation}) => {
                 />
               </View>
 
-              <View style={{flexDirection: 'row', width: '100%', paddingHorizontal: 10, marginTop: 20}}>
-                  <Text style={{flex: 1, color: 'white'}}>Femme</Text>
+              <View style={styles.content}>
+                  <Text style={styles.contentText}>Femme</Text>
                 <RadioButton
                 value="2"
                 status={checked === "2" ? "checked" : "unchecked"}
@@ -92,15 +92,32 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: '100%'
   },
+  boxContent: {
+    width: '100%', 
+    marginTop: 80, flex: 6
+  },
   iconBack: {
     position: 'absolute',
     top: 0,
     left: 0
   },
+  content: {
+    flexDirection: 'row', 
+    marginHorizontal: 20,
+    paddingVertical: 10, 
+    borderBottomColor: '#ddd', 
+    borderBottomWidth: 0.3, 
+    justifyContent: 'center', 
+    alignItems: 'center'
+  },
   headerText: {
     color: "white", 
     fontSize: 24, 
     marginTop: 20
+  },
+  contentText: {
+    flex: 1, 
+    color: 'white'
   },
   linearGradient: {
     flex: 1,

@@ -59,7 +59,9 @@ const styles = StyleSheet.create({
     borderRadius: 66, 
     height: 66, 
     width: 66, 
-    position: 'relative'
+    position: 'relative',
+    backgroundColor:'rgba(255,255,255,0.3)',
+
   },
   boxItem: {
     position: 'absolute', 

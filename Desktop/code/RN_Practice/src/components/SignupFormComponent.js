@@ -9,8 +9,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useDispatch, useSelector} from 'react-redux';
 import MessErrFunc from '../components/MessErr';
-import { authLoading, signUp } from '../redux/actions/User';
-import { deleteErrMess } from '../redux/actions/Error';
+import {signUp } from '../redux/actions/User';
 
 const SignUpFormComponent = ({navigation}) => {
   const {control, errors, handleSubmit} = useForm();
@@ -275,31 +274,10 @@ const SignUpFormComponent = ({navigation}) => {
               : (<View style={styles.loadingWrapper}>
                 <Image
                   style={styles.loadingImage}
-                  source={require('../../src/assets/loading.gif')}
+                  source={require('../../src/assets/load.gif')}
                 />
               </View>)
           }
-
-          {/* <TouchableOpacity
-            onPress={handleSubmit(onSubmit)}
-            style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-            <AntDesign name="check" size={24} color="white" />
-            <Text style={styles.textButton}>ME CONNECTER</Text>
-          </TouchableOpacity> */}
-          {/* <View style={styles.loadingWrapper}>
-                <Image
-                  style={styles.loadingImage}
-                  source={require('../../src/assets/loading.gif')}
-                />
-              </View> */}
-          {/* {auth.isLoading && (
-              <View style={styles.loadingWrapper}>
-                <Image
-                  style={styles.loadingImage}
-                  source={require('../../../assets/images/loading.gif')}
-                />
-              </View>
-            )} */}
         </View>
       </LinearGradient>
     </View>

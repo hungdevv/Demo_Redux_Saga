@@ -18,9 +18,12 @@ const styles = StyleSheet.create({
       color: "white",
     },
     contentView: {
+      alignItems: 'center',
       flexDirection: "row",
-      paddingHorizontal: 20,
+      marginHorizontal: 20,
       paddingVertical: 10,
+      borderBottomWidth: 0.3,
+      borderBottomColor: '#ddd'
     },
     content: {
       width: "100%",
