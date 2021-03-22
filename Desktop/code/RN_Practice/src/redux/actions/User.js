@@ -28,12 +28,12 @@ export const getIdCity = (id) => {
 // ====================================
 export const authLoading = () => {
     return {
-      type: AUTH_LOADING,
+      type: 'AUTH_LOADING',
     };
   };
   export const authLoaded = () => {
     return {
-      type: AUTH_LOADED,
+      type: 'AUTH_LOADED',
     };
   };
 
